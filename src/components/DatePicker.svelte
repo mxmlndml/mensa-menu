@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-  import { getContext, setContext } from "svelte";
-
   export let plan: [
     {
       date: string;
@@ -18,36 +15,44 @@
             day: "numeric",
           })
         : new Intl.DateTimeFormat("de-DE", {
-            weekday: "narrow",
+            weekday: "short",
           });
 
     return formatter.format(new Date(date));
   };
 </script>
 
-<nav>
-  {#each plan as day}
-    <div>
-      <p>{formatDate(day.date, "initial")}</p>
-      <button
-        on:click={() => (date = day.date)}
-        class:selected={date === day.date}
-        class:closed={day.closed}>{formatDate(day.date, "number")}</button
-      >
-    </div>
-  {/each}
-</nav>
+<header>
+  <nav>
+    {#each plan as day}
+      <div>
+        <time datetime={day.date}>{formatDate(day.date, "initial")}</time>
+        <button
+          on:click={() => (date = day.date)}
+          class:selected={date === day.date}
+          class:closed={day.closed}>{formatDate(day.date, "number")}</button
+        >
+      </div>
+    {/each}
+  </nav>
+</header>
 
 <style>
+  header {
+    position: sticky;
+    top: 0;
+    padding: 1rem 1rem;
+    background-color: var(--background);
+  }
   nav {
     display: flex;
     justify-content: space-between;
     max-width: 400px;
-    padding: 0 1rem;
-    /* align-content: center; */
+    align-content: center;
   }
 
-  p {
+  time {
+    display: block;
     font-size: 0.75rem;
     text-align: center;
   }
@@ -61,8 +66,8 @@
     padding: 0;
     background: none;
     border: none;
-    border-radius: 0.75em;
-    font-size: 1.25rem;
+    border-radius: 1em;
+    font-size: 1.2rem;
     color: var(--text);
     text-align: center;
     text-decoration: none;
@@ -70,14 +75,22 @@
   }
 
   button.selected {
-    background-color: var(--text);
-    color: var(--background-primary);
+    background-color: black;
+    color: var(--background);
+    font-weight: 600;
+    font-size: 1.15rem;
   }
   nav :first-child button {
-    color: red;
+    color: var(--theme);
   }
   nav :first-child button.selected {
-    background-color: red;
+    background-color: var(--theme);
     color: white;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    button.selected {
+      background-color: white;
+    }
   }
 </style>

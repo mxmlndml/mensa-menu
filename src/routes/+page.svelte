@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
   import DatePicker from "../components/DatePicker.svelte";
 
   export let data: {
@@ -63,11 +62,12 @@
 
 <style>
   div.box {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem;
-    background-color: var(--background-secondary);
+    background-color: white;
     border-radius: 1rem;
   }
+
   h2 {
     font-size: 0.75rem;
     font-weight: 400;
@@ -84,13 +84,20 @@
     gap: 0.25rem 0.5rem;
   }
   li {
-    background-color: #383838;
+    background-color: var(--background);
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
     font-size: 0.7rem;
     list-style: none;
   }
   p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    div.box,
+    li {
+      background-color: var(--fill-tertiary);
+    }
   }
 </style>

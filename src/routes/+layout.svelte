@@ -1,7 +1,17 @@
 <svelte:head>
   <meta name="color-scheme" content="dark light" />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: light)"
+    content="#f2f2f6"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
+    content="black"
+  />
   <link rel="stylesheet" href="global.css" />
-  <title>Mensa Menu</title>
+  <title>Mensa-Menü</title>
 </svelte:head>
 
 <main>
