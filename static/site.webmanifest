@@ -1,0 +1,24 @@
+{
+  "name": "Mensa-Menü",
+  "short_name": "Mensa",
+  "categories": [
+    "education",
+    "food"
+  ],
+  "description": "Bietet einen Überblick über die verschiedenen Gerichte der Mensa Academica der RWTH Aachen für die nächsten fünf Werktage.",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/pwa-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FF3B30",
+  "background_color": "#f2f2f6"
+}
