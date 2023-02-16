@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
+  import { invalidateAll } from "$app/navigation";
+  import { onDestroy } from "svelte";
+
   import DatePicker from "../components/DatePicker.svelte";
 
   export let data: {
@@ -18,12 +22,19 @@
     ];
   };
   const { plan } = data;
-
   let date = plan[0].date;
-
   $: [menu] = plan.filter((day) => day.date === date);
 
-  $: console.log(menu);
+  const updateMeals = () => {
+    if (document.visibilityState === "hidden") {
+      return;
+    }
+    invalidateAll();
+  };
+
+  if (browser) {
+    document.addEventListener("visibilitychange", updateMeals);
+  }
 
   const formatCurrency = (currency: number) => {
     const formatter = new Intl.NumberFormat("de-DE", {
@@ -33,6 +44,10 @@
 
     return formatter.format(currency);
   };
+
+  onDestroy(() => {
+    document.removeEventListener("visibilitychange", updateMeals);
+  });
 </script>
 
 <h1>Mensa Academica</h1>
