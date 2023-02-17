@@ -26,7 +26,7 @@
   $: [menu] = plan.filter((day) => day.date === date);
 
   const updateMeals = () => {
-    if (document.visibilityState === "hidden") {
+    if (browser && document.visibilityState === "hidden") {
       return;
     }
     invalidateAll();
@@ -46,7 +46,9 @@
   };
 
   onDestroy(() => {
-    document.removeEventListener("visibilitychange", updateMeals);
+    if (browser) {
+      document.removeEventListener("visibilitychange", updateMeals);
+    }
   });
 </script>
 
