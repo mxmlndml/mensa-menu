@@ -1,5 +1,6 @@
-/** @type {import('./$types').PageLoad} */
-export async function load({fetch}) {
+import type { PageLoad } from "./$types";
+
+export const load = (async ({ fetch }) => {
   const fetchPlan = async () => {
     const canteenId = 187;
     const url = `https://openmensa.org/api/v2/canteens/${canteenId}/meals`;
@@ -7,9 +8,9 @@ export async function load({fetch}) {
     const response = await fetch(url);
     const plan = await response.json();
     return plan;
-  }
+  };
 
   return {
-    plan: fetchPlan()
-  }
-}
+    plan: fetchPlan(),
+  };
+}) satisfies PageLoad;

@@ -1,3 +1,8 @@
+<script>
+  import { dev } from "$app/environment";
+  const title = (dev ? "DEV | " : "") + "Mensa-Menü";
+</script>
+
 <svelte:head>
   <meta name="color-scheme" content="dark light" />
   <meta
@@ -11,7 +16,7 @@
     content="black"
   />
   <link rel="stylesheet" href="global.css" />
-  <title>Mensa-Menü</title>
+  <title>{title}</title>
 </svelte:head>
 
 <main>
