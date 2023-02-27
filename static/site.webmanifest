@@ -19,6 +19,5 @@
       "type": "image/png"
     }
   ],
-  "scope": "https://mensa-menu.pages.dev",
-  "theme_color": "#FF3B30"
+  "scope": "https://mensa-menu.pages.dev"
 }
