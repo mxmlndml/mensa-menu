@@ -22,33 +22,30 @@
   };
 </script>
 
-<header>
-  <nav>
-    {#each plan as day}
-      <div>
-        <time datetime={day.date}>{formatDate(day.date, "initial")}</time>
-        <button
-          on:click={() => (date = day.date)}
-          class:selected={date === day.date}
-          class:closed={day.closed}>{formatDate(day.date, "number")}</button
-        >
-      </div>
-    {/each}
-  </nav>
-</header>
+<!-- <header> -->
+<nav>
+  {#each plan as day}
+    <div>
+      <time datetime={day.date}>{formatDate(day.date, "initial")}</time>
+      <button
+        on:click={() => (date = day.date)}
+        class:selected={date === day.date}
+        class:closed={day.closed}>{formatDate(day.date, "number")}</button
+      >
+    </div>
+  {/each}
+</nav>
 
+<!-- </header> -->
 <style>
-  header {
-    position: sticky;
-    top: 0;
-    padding: 1rem 1rem;
-    background-color: var(--background);
-  }
   nav {
     display: flex;
     justify-content: space-between;
-    max-width: 400px;
     align-content: center;
+  }
+
+  div {
+    margin-inline: 1rem;
   }
 
   time {
@@ -76,7 +73,7 @@
 
   button.selected {
     background-color: black;
-    color: var(--background);
+    color: var(--bg);
     font-weight: 600;
     font-size: 1.15rem;
   }

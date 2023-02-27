@@ -2,7 +2,7 @@
   import { browser } from "$app/environment";
   import { invalidateAll } from "$app/navigation";
   import { onDestroy } from "svelte";
-
+  import { NavigationBar } from "@mxmlndml/cupertino-components";
   import DatePicker from "../components/DatePicker.svelte";
 
   export let data: {
@@ -52,9 +52,10 @@
   });
 </script>
 
-<h1>Mensa Academica</h1>
-
-<DatePicker {plan} bind:date />
+<NavigationBar>
+  Mensa Academica
+  <DatePicker {plan} bind:date slot="subheader" />
+</NavigationBar>
 
 {#if !menu.closed}
   <dl>
@@ -101,7 +102,7 @@
     gap: 0.25rem 0.5rem;
   }
   li {
-    background-color: var(--background);
+    background-color: var(--bg);
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
     font-size: 0.7rem;
