@@ -1,6 +1,6 @@
 <script lang="ts">
   import { browser } from "$app/environment";
-  import { invalidateAll } from "$app/navigation";
+  import { invalidate } from "$app/navigation";
   import { onDestroy } from "svelte";
   import { NavigationBar } from "@mxmlndml/cupertino-components";
   import DatePicker from "../components/DatePicker.svelte";
@@ -21,15 +21,14 @@
       }
     ];
   };
-  const { plan } = data;
-  let date = plan[0].date;
-  $: [menu] = plan.filter((day) => day.date === date);
+  let date = data.plan[0].date;
+  $: [menu] = data.plan.filter((day) => day.date === date);
 
   const updateMeals = () => {
     if (browser && document.visibilityState === "hidden") {
       return;
     }
-    invalidateAll();
+    invalidate("meals");
   };
 
   if (browser) {
@@ -54,7 +53,7 @@
 
 <NavigationBar>
   Mensa Academica
-  <DatePicker {plan} bind:date slot="subheader" />
+  <DatePicker plan={data.plan} bind:date slot="subheader" />
 </NavigationBar>
 
 {#if !menu.closed}
