@@ -26,7 +26,7 @@
   let index = 0;
 
   const onDatePickerChange = (event: CustomEvent) => {
-    carousel.scrollTo(data.plan.indexOf(event.detail.plan));
+    carousel.scrollTo(data.plan.indexOf(event.detail));
     setTimeout(() => {
       scrollTo({
         top: 0,
