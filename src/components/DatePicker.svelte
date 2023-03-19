@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+
   export let plan: [
     {
       date: string;
@@ -7,6 +9,8 @@
   ];
 
   export let date = plan[0].date;
+
+  const dispatch = createEventDispatcher();
 
   const formatDate = (date: string, type: "number" | "initial") => {
     const formatter =
@@ -28,7 +32,7 @@
     <div>
       <time datetime={day.date}>{formatDate(day.date, "initial")}</time>
       <button
-        on:click={() => (date = day.date)}
+        on:click={() => dispatch("change", day)}
         class:selected={date === day.date}
         class:closed={day.closed}>{formatDate(day.date, "number")}</button
       >

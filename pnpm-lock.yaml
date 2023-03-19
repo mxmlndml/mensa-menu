@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@mxmlndml/cupertino-components': ^0.0.8
+  '@mxmlndml/cupertino-components': ^0.0.10
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/adapter-cloudflare': ^1.1.0
   '@sveltejs/kit': ^1.7.1
@@ -12,7 +12,7 @@ specifiers:
   vite: ^4.0.0
 
 devDependencies:
-  '@mxmlndml/cupertino-components': 0.0.8_6xu4n6hfcghv434xktvtcjkjq4
+  '@mxmlndml/cupertino-components': 0.0.10_6xu4n6hfcghv434xktvtcjkjq4
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.12.0
   '@sveltejs/adapter-cloudflare': 1.1.0_@sveltejs+kit@1.12.0
   '@sveltejs/kit': 1.12.0_svelte@3.57.0+vite@4.2.0
@@ -440,8 +440,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@mxmlndml/cupertino-components/0.0.8_6xu4n6hfcghv434xktvtcjkjq4:
-    resolution: {integrity: sha512-hhqVUXoqbzqZA30nwDqYRs/bdMzkqJ0eFB1udrUtmoKqplc3b/cGpGYZm60MneCrU5socCOFYuZ3M+7hXTkkkw==, tarball: download/@mxmlndml/cupertino-components/0.0.8/6398373c85bb703fd3ab4b5a9aff84124ebea978}
+  /@mxmlndml/cupertino-components/0.0.10_6xu4n6hfcghv434xktvtcjkjq4:
+    resolution: {integrity: sha512-IjjKQCV3SHGJ+kjBAZYYGACcYOC1U7SP2jtBTFLWQrhvW32H/5PimFAQF5D2HcPVFXGwPcgQ10/t6XQtJmpG0A==, tarball: download/@mxmlndml/cupertino-components/0.0.10/8ebd836d9069e88a6eb69a3f5344b10ca1e0b717}
     peerDependencies:
       '@sveltejs/kit': ^1.8.2
       svelte: ^3.54.0
