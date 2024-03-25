@@ -44,11 +44,6 @@
 
   if (browser) {
     document.addEventListener("visibilitychange", updateMeals);
-
-    const today = new Date();
-    if(today.getMonth() == 2 && today.getDate() == 25) {
-      alert("🎉 Happy Birthday notty!!! 🎉")
-    }
   }
 
   onDestroy(() => {
