@@ -2,8 +2,7 @@ import type { PageLoad } from "./$types";
 
 export const load = (async ({ fetch, depends }) => {
   const fetchPlan = async () => {
-    const canteenId = 187;
-    const url = `https://openmensa.org/api/v2/canteens/${canteenId}/meals`;
+    const url = "http://mensa-api.mxmlndml.com/api/v1/canteens/187/meals";
 
     const response = await fetch(url);
     const plan = await response.json();
