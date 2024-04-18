@@ -6,8 +6,11 @@
 
     if (browser) {
         const today = new Date();
-        if (today.getMonth() == 2 && today.getDate() == 25) {
+        if (today.getMonth() === 2 && today.getDate() === 25) {
             alert("🎉 Happy Birthday notty!!! 🎉");
+        }
+        if (today.getMonth() === 3 && today.getDate() === 1) {
+            alert("April April 🤣\n(Die Latenz wird nie repariert werden muhahahahha)")
         }
     }
 </script>
