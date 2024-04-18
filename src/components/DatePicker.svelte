@@ -46,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
+    overflow-y: scroll;
   }
 
   div {
